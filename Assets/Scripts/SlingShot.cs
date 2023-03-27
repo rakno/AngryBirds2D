@@ -28,7 +28,7 @@ public class SlingShot : MonoBehaviour
     public float force;
     public Transform lookAtLevelFirst;
     public CinemachineVirtualCamera cinemachineVirtualCamera;
-    public float lookAtDuration = 2f;
+    public float lookAtDuration = 3f;
     float timer;
 
     private AudioClip rubberWhip;
@@ -36,20 +36,35 @@ public class SlingShot : MonoBehaviour
 
     private AudioClip birdfly;
     public AudioSource birdflySource;
+    public float timeLeft =2.0f;
 
     void Start()
     {
 
+        StartCoroutine("Countdown");
         slingShotCollider = GetComponent<Collider2D>();
         lineRenderers[0].positionCount = 2;
         lineRenderers[1].positionCount = 2;
         lineRenderers[0].SetPosition(0, stripPositions[0].position);
         lineRenderers[1].SetPosition(0, stripPositions[1].position);
 
-        CreateBird();
+        //CreateBird();
      
        
        
+    }
+    IEnumerator Countdown()
+    {
+        while (timeLeft > 0)
+        {
+            yield return new WaitForSeconds(1.0f); 
+            timeLeft--;
+            Debug.Log("Time left: " + timeLeft); 
+            cinemachineVirtualCamera.Follow = lookAtLevelFirst;
+        }
+
+        Debug.Log("Time's up!"); 
+        CreateBird();
     }
 
     void CreateBird()
@@ -62,7 +77,7 @@ public class SlingShot : MonoBehaviour
 
 
         bird.isKinematic = true;
-        cinemachineVirtualCamera.Follow = bird.transform;
+       cinemachineVirtualCamera.Follow = bird.transform;
         ResetStrips();
     }
 
