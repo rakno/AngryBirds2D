@@ -48,10 +48,7 @@ public class SlingShot : MonoBehaviour
         lineRenderers[0].SetPosition(0, stripPositions[0].position);
         lineRenderers[1].SetPosition(0, stripPositions[1].position);
 
-        //CreateBird();
-     
-       
-       
+        
     }
     IEnumerator Countdown()
     {
@@ -59,11 +56,11 @@ public class SlingShot : MonoBehaviour
         {
             yield return new WaitForSeconds(1.0f); 
             timeLeft--;
-            Debug.Log("Time left: " + timeLeft); 
+           
             cinemachineVirtualCamera.Follow = lookAtLevelFirst;
         }
 
-        Debug.Log("Time's up!"); 
+        
         CreateBird();
     }
 
