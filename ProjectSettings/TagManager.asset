@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Wood
+  - Pig
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - background
+  - Water
+  - UI
+  - sling
+  - bird
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: mainBACK
+    uniqueID: 25590615
+    locked: 0
+  - name: gameLEVEL
+    uniqueID: 999842029
+    locked: 0
+  - name: pointsLEVEL
+    uniqueID: 1829709267
+    locked: 0
